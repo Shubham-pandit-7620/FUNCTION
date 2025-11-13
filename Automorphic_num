@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Automorphic {
+
+    public static int issqure(int temp) {
+        return temp * temp;
+    }
+
+    public static boolean Auto(int temp) {
+        int rem = 0;
+        int sqr = issqure(temp);
+        int num = temp;
+
+        while (num > 0) {
+
+            if (sqr % 10 != num % 10) {
+                return false;
+
+            }
+            num = num / 10;
+            sqr = sqr / 10;
+
+        }
+        return true;
+    }
+
+    public static void Range(int temp) {
+
+        for (int i = 1; i < temp; i++) {
+            if (Auto(i)) {
+                System.out.println(i);
+
+            }
+
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(issqure(625));
+        Range(1000);
+    }
+}
