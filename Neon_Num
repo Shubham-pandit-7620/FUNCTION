@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Neon {
+
+    public static int squre(int temp) {
+
+        return temp * temp;
+
+    }
+
+    public static int sum(int temp) {
+
+        int sum = 0;
+        int num = temp;
+        int rem = 0;
+
+        while (num > 0) {
+            rem = num % 10;
+            sum = sum + rem;
+            num = num / 10;
+        }
+        return sum;
+    }
+
+    public static boolean isNeon(int temp) {
+        return temp == sum(squre(temp));
+
+    }
+
+    public static void Range(int temp) {
+        for (int i = 1; i < temp; i++) {
+            if (isNeon(i)) {
+                System.out.println(i);
+
+            }
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isNeon(10));
+        Range(1000);
+    }
+
+}
